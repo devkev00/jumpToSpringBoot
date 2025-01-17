@@ -3,7 +3,6 @@ package com.mysite.sbb.answer;
 import com.mysite.sbb.question.Question;
 import com.mysite.sbb.question.QuestionService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
