@@ -20,7 +20,7 @@ public class QuestionService {
 
     public Page<Question> getList(int page) {
         List<Sort.Order> sorts = new ArrayList<>();
-        sorts.add(Sort.Order.desc("createDate"));
+        sorts.add(Sort.Order.desc("createDate")); // 이 부분은 jpa가 엔티티를 참조해서 자동으로 쿼리를 생성한다
         Pageable pageable = PageRequest.of(page,10, Sort.by(sorts));
         return this.questionRepository.findAll(pageable);
     }
