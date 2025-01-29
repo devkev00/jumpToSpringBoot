@@ -54,4 +54,9 @@ public class QuestionService {
     public void delete(Question question) {
         this.questionRepository.delete(question);
     }
+
+    public void vote(Question question, SiteUser siteUser) {
+        question.getVoter().add(siteUser); // voter 필드가 set이기 때문에 add 메서드를 쓸 수 있는 것
+        this.questionRepository.save(question);
+    }
 }
