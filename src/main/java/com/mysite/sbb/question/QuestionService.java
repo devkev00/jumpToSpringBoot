@@ -75,10 +75,10 @@ public class QuestionService {
                 Join<Answer, SiteUser> u2 = a.join("author", JoinType.LEFT);
                 return cb.or(cb.like(q.get("subject"), "%" + kw + "%"), // 제목
                         cb.like(q.get("content"), "%" + kw + "%"),                 // 내용
-                        cb.like(q.get("username"), "%" + kw + "%"),                // 작성자
+                        cb.like(u1.get("username"), "%" + kw + "%"),                // 작성자
 
                         cb.like(q.get("content"), "%" + kw + "%"),                 // 답변 내용
-                        cb.like(q.get("username"), "%" + kw + "%"));               // 답변 작성
+                        cb.like(u2.get("username"), "%" + kw + "%"));               // 답변 작성
             }
         };
     }
